@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,31 @@
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div id="container"></div>
+    <div class="header">
+        <h1>WEB PAINT</h1>
+    </div>
+    <div class="content">
+        <div class="settings">
+            <input id="gridSlider" type="range" value="25" min="1" max="50" />
+            <label id="gridSlider-label" for="slider">25</label>
+            <button id="clearGrid">Clear</button>
+            <button id="pen" class="selected option">Draw</button>
+
+
+            <input id="colorPicker" type="color" value="#333333" />
+            <button id="rainbow" class="option">Rainbow</button>
+            <button id="eraser" class="option">Eraser</button>
+        </div>
+        <div id="grid"></div>
+    </div>
+    <div class="footer">
+        <p>Uche's Paint 2022</p>
+    </div>
+
 
     <script src="./script.js"></script>
 </body>
+
 </html>
