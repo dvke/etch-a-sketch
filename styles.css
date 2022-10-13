@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rye&family=Silkscreen&display=swap');
+
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
 }
 
+*{
+    transition: all ease .3s;
+}
 *,
 *::before,
 *::after {
@@ -12,8 +17,17 @@
 }
 
 body {
+    font-family: 'IndieFlower', cursive;
     min-height: 100vh;
-    background: gainsboro;
+    background: rgb(33, 33, 33);
+    color: #FAFAFA;
+}
+
+header {
+    color: #fafafa;
+    text-align: center;
+    font-family: 'Silkscreen', cursive;
+    font-size: 2em;
 }
 
 .content {
@@ -32,8 +46,15 @@ body {
     width: 500px;
     height: 500px;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px;
+    box-shadow: black 0px 3px 10px;
     cursor: url(Pen-3-icon.png), default;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-item {
@@ -47,8 +68,67 @@ body {
     margin: 1.5em 0;
 }
 
-.selected {
-    background: rgb(65, 65, 65);
-    color: white;
+.option {
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin: 1em 0;
 }
 
+#colorPicker{
+    width: 2em;
+    border: none;
+}
+
+
+#rainbow {
+    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.selected {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+    background: gray;
+}
+
+footer{
+    margin: 2em;
+    text-align: center;
+}
+
+@media(max-width:810px){
+
+    .content{
+        flex-direction: row;
+    }
+
+    .option{
+        padding: .5em .5em;
+    }
+
+    .settings{
+        flex-direction: column;
+        margin: 1em;
+    }
+}
+
+@media(max-width:700px){
+    .content{
+        display: none;
+    }
+
+    body::after{
+        text-align: center;
+        color: red;
+        content: 'No Mobile site yet.';
+        display: block;
+    }
+}

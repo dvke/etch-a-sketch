@@ -1,5 +1,5 @@
 //default values
-const DEFAULT_SIZE = 50;
+const DEFAULT_SIZE = 32;
 const DEFAULT_COLOR = '#000000';
 const DEFAULT_MODE = 'pen';
 
@@ -13,7 +13,7 @@ document.body.onmouseup = () => (mouseDown = false)
 //elements
 const grid = document.getElementById("grid");
 const sizeSlider = document.getElementById('gridSlider');
-const sliderValue = document.getElementById('gridSlider-label')
+// const sliderValue = document.getElementById('gridSlider-label')
 const clearBtn = document.getElementById('clearGrid');
 const options = document.querySelectorAll('.option');
 const colorPicker = document.getElementById('colorPicker');
@@ -28,7 +28,7 @@ function setCurrentMode(newMode) {
     currentMode = newMode;
 }
 
-function setCurrentColor(newColor){
+function setCurrentColor(newColor) {
     currentColor = newColor;
 }
 
@@ -45,7 +45,7 @@ function unselectOption() {
 
 function changeSize(value) {
     setCurrentSize(value);
-    updateSizeValue(value);
+    // updateSizeValue(value);
     reloadGrid();
 }
 
@@ -103,7 +103,6 @@ for (var i = 0; i < options.length; i++) {
     options[i].addEventListener("click", e => {
         selectOption(e);
         currentMode = e.target.id;
-        console.log(`current mode = ${currentMode}`);
     });
 }
 
